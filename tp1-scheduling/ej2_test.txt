@@ -1,0 +1,73 @@
+Here is the list of inputs:
+OPTIONS jobs 3
+OPTIONS queues 3
+OPTIONS allotments for queue  2 is   1
+OPTIONS quantum length for queue  2 is  10
+OPTIONS allotments for queue  1 is   1
+OPTIONS quantum length for queue  1 is  10
+OPTIONS allotments for queue  0 is   1
+OPTIONS quantum length for queue  0 is  10
+OPTIONS boost 0
+OPTIONS ioTime 5
+OPTIONS stayAfterIO False
+OPTIONS iobump False
+
+
+For each job, three defining characteristics are given:
+  startTime : at what time does the job enter the system
+  runTime   : the total CPU time needed by the job to finish
+  ioFreq    : every ioFreq time units, the job issues an I/O
+              (the I/O takes ioTime units to complete)
+
+Job List:
+  Job  0: startTime   0 - runTime   8 - ioFreq   7
+  Job  1: startTime   0 - runTime   4 - ioFreq   3
+  Job  2: startTime   0 - runTime   5 - ioFreq   4
+
+
+Execution Trace:
+
+[ time 0 ] JOB BEGINS by JOB 0
+[ time 0 ] JOB BEGINS by JOB 1
+[ time 0 ] JOB BEGINS by JOB 2
+[ time 0 ] Run JOB 0 at PRIORITY 2 [ TICKS 9 ALLOT 1 TIME 7 (of 8) ]
+[ time 1 ] Run JOB 0 at PRIORITY 2 [ TICKS 8 ALLOT 1 TIME 6 (of 8) ]
+[ time 2 ] Run JOB 0 at PRIORITY 2 [ TICKS 7 ALLOT 1 TIME 5 (of 8) ]
+[ time 3 ] Run JOB 0 at PRIORITY 2 [ TICKS 6 ALLOT 1 TIME 4 (of 8) ]
+[ time 4 ] Run JOB 0 at PRIORITY 2 [ TICKS 5 ALLOT 1 TIME 3 (of 8) ]
+[ time 5 ] Run JOB 0 at PRIORITY 2 [ TICKS 4 ALLOT 1 TIME 2 (of 8) ]
+[ time 6 ] Run JOB 0 at PRIORITY 2 [ TICKS 3 ALLOT 1 TIME 1 (of 8) ]
+[ time 7 ] IO_START by JOB 0
+IO DONE
+[ time 7 ] Run JOB 1 at PRIORITY 2 [ TICKS 9 ALLOT 1 TIME 3 (of 4) ]
+[ time 8 ] Run JOB 1 at PRIORITY 2 [ TICKS 8 ALLOT 1 TIME 2 (of 4) ]
+[ time 9 ] Run JOB 1 at PRIORITY 2 [ TICKS 7 ALLOT 1 TIME 1 (of 4) ]
+[ time 10 ] IO_START by JOB 1
+IO DONE
+[ time 10 ] Run JOB 2 at PRIORITY 2 [ TICKS 9 ALLOT 1 TIME 4 (of 5) ]
+[ time 11 ] Run JOB 2 at PRIORITY 2 [ TICKS 8 ALLOT 1 TIME 3 (of 5) ]
+[ time 12 ] IO_DONE by JOB 0
+[ time 12 ] Run JOB 2 at PRIORITY 2 [ TICKS 7 ALLOT 1 TIME 2 (of 5) ]
+[ time 13 ] Run JOB 2 at PRIORITY 2 [ TICKS 6 ALLOT 1 TIME 1 (of 5) ]
+[ time 14 ] IO_START by JOB 2
+IO DONE
+[ time 14 ] Run JOB 0 at PRIORITY 2 [ TICKS 2 ALLOT 1 TIME 0 (of 8) ]
+[ time 15 ] FINISHED JOB 0
+[ time 15 ] IO_DONE by JOB 1
+[ time 15 ] Run JOB 1 at PRIORITY 2 [ TICKS 6 ALLOT 1 TIME 0 (of 4) ]
+[ time 16 ] FINISHED JOB 1
+[ time 16 ] IDLE
+[ time 17 ] IDLE
+[ time 18 ] IDLE
+[ time 19 ] IO_DONE by JOB 2
+[ time 19 ] Run JOB 2 at PRIORITY 2 [ TICKS 5 ALLOT 1 TIME 0 (of 5) ]
+[ time 20 ] FINISHED JOB 2
+
+Final statistics:
+  Job  0: startTime   0 - response   0 - turnaround  15 - waitingTime:   2
+  Job  1: startTime   0 - response   7 - turnaround  16 - waitingTime:   7
+  Job  2: startTime   0 - response  10 - turnaround  20 - waitingTime:  10
+
+  Avg  2: startTime n/a - response 5.67 - turnaround 17.00
+
+
