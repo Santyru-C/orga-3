@@ -1,0 +1,39 @@
+ARG addresses 1,2,3,2,3,1,1,1,3,4,6,5,4,4,5,6,6,4,2,1,4,3,3,5
+ARG addressfile 
+ARG numaddrs 10
+ARG policy LRU
+ARG clockbits 2
+ARG cachesize 3
+ARG maxpage 10
+ARG seed 0
+ARG notrace False
+
+Solving...
+
+Access: 1  MISS LRU ->          [1] <- MRU Replaced:- [Hits:0 Misses:1]
+Access: 2  MISS LRU ->       [1, 2] <- MRU Replaced:- [Hits:0 Misses:2]
+Access: 3  MISS LRU ->    [1, 2, 3] <- MRU Replaced:- [Hits:0 Misses:3]
+Access: 2  HIT  LRU ->    [1, 3, 2] <- MRU Replaced:- [Hits:1 Misses:3]
+Access: 3  HIT  LRU ->    [1, 2, 3] <- MRU Replaced:- [Hits:2 Misses:3]
+Access: 1  HIT  LRU ->    [2, 3, 1] <- MRU Replaced:- [Hits:3 Misses:3]
+Access: 1  HIT  LRU ->    [2, 3, 1] <- MRU Replaced:- [Hits:4 Misses:3]
+Access: 1  HIT  LRU ->    [2, 3, 1] <- MRU Replaced:- [Hits:5 Misses:3]
+Access: 3  HIT  LRU ->    [2, 1, 3] <- MRU Replaced:- [Hits:6 Misses:3]
+Access: 4  MISS LRU ->    [1, 3, 4] <- MRU Replaced:2 [Hits:6 Misses:4]
+Access: 6  MISS LRU ->    [3, 4, 6] <- MRU Replaced:1 [Hits:6 Misses:5]
+Access: 5  MISS LRU ->    [4, 6, 5] <- MRU Replaced:3 [Hits:6 Misses:6]
+Access: 4  HIT  LRU ->    [6, 5, 4] <- MRU Replaced:- [Hits:7 Misses:6]
+Access: 4  HIT  LRU ->    [6, 5, 4] <- MRU Replaced:- [Hits:8 Misses:6]
+Access: 5  HIT  LRU ->    [6, 4, 5] <- MRU Replaced:- [Hits:9 Misses:6]
+Access: 6  HIT  LRU ->    [4, 5, 6] <- MRU Replaced:- [Hits:10 Misses:6]
+Access: 6  HIT  LRU ->    [4, 5, 6] <- MRU Replaced:- [Hits:11 Misses:6]
+Access: 4  HIT  LRU ->    [5, 6, 4] <- MRU Replaced:- [Hits:12 Misses:6]
+Access: 2  MISS LRU ->    [6, 4, 2] <- MRU Replaced:5 [Hits:12 Misses:7]
+Access: 1  MISS LRU ->    [4, 2, 1] <- MRU Replaced:6 [Hits:12 Misses:8]
+Access: 4  HIT  LRU ->    [2, 1, 4] <- MRU Replaced:- [Hits:13 Misses:8]
+Access: 3  MISS LRU ->    [1, 4, 3] <- MRU Replaced:2 [Hits:13 Misses:9]
+Access: 3  HIT  LRU ->    [1, 4, 3] <- MRU Replaced:- [Hits:14 Misses:9]
+Access: 5  MISS LRU ->    [4, 3, 5] <- MRU Replaced:1 [Hits:14 Misses:10]
+
+FINALSTATS hits 14   misses 10   hitrate 58.33
+

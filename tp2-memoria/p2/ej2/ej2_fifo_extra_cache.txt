@@ -1,0 +1,33 @@
+
+ARG addresses 1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6
+ARG addressfile 
+ARG numaddrs 10
+ARG policy FIFO
+ARG clockbits 2
+ARG cachesize 6
+ARG maxpage 10
+ARG seed 0
+ARG notrace False
+
+Solving...
+
+Access: 1  MISS FirstIn ->          [1] <- Lastin  Replaced:- [Hits:0 Misses:1]
+Access: 2  MISS FirstIn ->       [1, 2] <- Lastin  Replaced:- [Hits:0 Misses:2]
+Access: 3  MISS FirstIn ->    [1, 2, 3] <- Lastin  Replaced:- [Hits:0 Misses:3]
+Access: 4  MISS FirstIn -> [1, 2, 3, 4] <- Lastin  Replaced:- [Hits:0 Misses:4]
+Access: 5  MISS FirstIn -> [1, 2, 3, 4, 5] <- Lastin  Replaced:- [Hits:0 Misses:5]
+Access: 6  MISS FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:0 Misses:6]
+Access: 1  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:1 Misses:6]
+Access: 2  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:2 Misses:6]
+Access: 3  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:3 Misses:6]
+Access: 4  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:4 Misses:6]
+Access: 5  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:5 Misses:6]
+Access: 6  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:6 Misses:6]
+Access: 1  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:7 Misses:6]
+Access: 2  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:8 Misses:6]
+Access: 3  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:9 Misses:6]
+Access: 4  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:10 Misses:6]
+Access: 5  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:11 Misses:6]
+Access: 6  HIT  FirstIn -> [1, 2, 3, 4, 5, 6] <- Lastin  Replaced:- [Hits:12 Misses:6]
+
+FINALSTATS hits 12   misses 6   hitrate 66.67

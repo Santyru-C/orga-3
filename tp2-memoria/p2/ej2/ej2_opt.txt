@@ -1,0 +1,32 @@
+ARG addresses 1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6
+ARG addressfile 
+ARG numaddrs 10
+ARG policy OPT
+ARG clockbits 2
+ARG cachesize 5
+ARG maxpage 10
+ARG seed 0
+ARG notrace False
+
+Solving...
+
+Access: 1  MISS Left  ->          [1] <- Right Replaced:- [Hits:0 Misses:1]
+Access: 2  MISS Left  ->       [1, 2] <- Right Replaced:- [Hits:0 Misses:2]
+Access: 3  MISS Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:0 Misses:3]
+Access: 4  MISS Left  -> [1, 2, 3, 4] <- Right Replaced:- [Hits:0 Misses:4]
+Access: 5  MISS Left  -> [1, 2, 3, 4, 5] <- Right Replaced:- [Hits:0 Misses:5]
+Access: 6  MISS Left  -> [1, 2, 3, 4, 6] <- Right Replaced:5 [Hits:0 Misses:6]
+Access: 1  HIT  Left  -> [1, 2, 3, 4, 6] <- Right Replaced:- [Hits:1 Misses:6]
+Access: 2  HIT  Left  -> [1, 2, 3, 4, 6] <- Right Replaced:- [Hits:2 Misses:6]
+Access: 3  HIT  Left  -> [1, 2, 3, 4, 6] <- Right Replaced:- [Hits:3 Misses:6]
+Access: 4  HIT  Left  -> [1, 2, 3, 4, 6] <- Right Replaced:- [Hits:4 Misses:6]
+Access: 5  MISS Left  -> [1, 2, 3, 6, 5] <- Right Replaced:4 [Hits:4 Misses:7]
+Access: 6  HIT  Left  -> [1, 2, 3, 6, 5] <- Right Replaced:- [Hits:5 Misses:7]
+Access: 1  HIT  Left  -> [1, 2, 3, 6, 5] <- Right Replaced:- [Hits:6 Misses:7]
+Access: 2  HIT  Left  -> [1, 2, 3, 6, 5] <- Right Replaced:- [Hits:7 Misses:7]
+Access: 3  HIT  Left  -> [1, 2, 3, 6, 5] <- Right Replaced:- [Hits:8 Misses:7]
+Access: 4  MISS Left  -> [1, 2, 6, 5, 4] <- Right Replaced:3 [Hits:8 Misses:8]
+Access: 5  HIT  Left  -> [1, 2, 6, 5, 4] <- Right Replaced:- [Hits:9 Misses:8]
+Access: 6  HIT  Left  -> [1, 2, 6, 5, 4] <- Right Replaced:- [Hits:10 Misses:8]
+
+FINALSTATS hits 10   misses 8   hitrate 55.56

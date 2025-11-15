@@ -1,0 +1,39 @@
+ARG addresses 1,2,3,2,3,1,1,1,3,4,6,5,4,4,5,6,6,4,2,1,4,3,3,5
+ARG addressfile 
+ARG numaddrs 10
+ARG policy OPT
+ARG clockbits 2
+ARG cachesize 3
+ARG maxpage 10
+ARG seed 0
+ARG notrace False
+
+Solving...
+
+Access: 1  MISS Left  ->          [1] <- Right Replaced:- [Hits:0 Misses:1]
+Access: 2  MISS Left  ->       [1, 2] <- Right Replaced:- [Hits:0 Misses:2]
+Access: 3  MISS Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:0 Misses:3]
+Access: 2  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:1 Misses:3]
+Access: 3  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:2 Misses:3]
+Access: 1  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:3 Misses:3]
+Access: 1  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:4 Misses:3]
+Access: 1  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:5 Misses:3]
+Access: 3  HIT  Left  ->    [1, 2, 3] <- Right Replaced:- [Hits:6 Misses:3]
+Access: 4  MISS Left  ->    [1, 2, 4] <- Right Replaced:3 [Hits:6 Misses:4]
+Access: 6  MISS Left  ->    [2, 4, 6] <- Right Replaced:1 [Hits:6 Misses:5]
+Access: 5  MISS Left  ->    [4, 6, 5] <- Right Replaced:2 [Hits:6 Misses:6]
+Access: 4  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:7 Misses:6]
+Access: 4  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:8 Misses:6]
+Access: 5  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:9 Misses:6]
+Access: 6  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:10 Misses:6]
+Access: 6  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:11 Misses:6]
+Access: 4  HIT  Left  ->    [4, 6, 5] <- Right Replaced:- [Hits:12 Misses:6]
+Access: 2  MISS Left  ->    [4, 5, 2] <- Right Replaced:6 [Hits:12 Misses:7]
+Access: 1  MISS Left  ->    [4, 5, 1] <- Right Replaced:2 [Hits:12 Misses:8]
+Access: 4  HIT  Left  ->    [4, 5, 1] <- Right Replaced:- [Hits:13 Misses:8]
+Access: 3  MISS Left  ->    [4, 5, 3] <- Right Replaced:1 [Hits:13 Misses:9]
+Access: 3  HIT  Left  ->    [4, 5, 3] <- Right Replaced:- [Hits:14 Misses:9]
+Access: 5  HIT  Left  ->    [4, 5, 3] <- Right Replaced:- [Hits:15 Misses:9]
+
+FINALSTATS hits 15   misses 9   hitrate 62.50
+
